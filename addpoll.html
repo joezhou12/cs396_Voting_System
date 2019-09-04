@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="lib/css/bootstrap.css">
+    <title>Voting system - add poll</title>
+</head>
+<body>
+      <!-- navigations -->
+<nav class="nav bg-secondary mb-2 p-2">
+        <a class="nav-link page-link mx-4 rounded" href="addpoll.html">Add Poll</a>
+        <a class="nav-link page-link rounded" href="index.php">Polls</a>
+</nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+              <!-- used card layout for better representation -->
+                <div class="card">
+                    <div class="card-header text-info">
+                        Add New Poll
+                    </div>
+                    <div class="card-body">
+                      <!-- post from data to php file -->
+                            <form id="pollForm" action="AddPoll.php" method="POST">
+                                    <div class="form-group">
+                                      <label for="pollQuestion">Poll question</label>
+                                      <input type="text" class="form-control" name="pollQuestion" id="pollQuestion" placeholder="Enter poll question" required>
+                                    </div>
+                                    <!-- used jquery event on change of select value to populate table with choices selected by user -->
+                                    <div class="form-group">
+                                            <label for="pollChoices">poll choices</label>
+                                            <select class="form-control" id="pollChoices">
+                                              <option value="1">1</option>
+                                              <option value="2" selected="selected">2</option>
+                                              <option value="3">3</option>
+                                              <option value="4">4</option>
+                                              <option value="5">5</option>
+                                              <option value="6">6</option>
+                                            </select>
+                                    </div>
+                                    <div class="form-group">
+                                            <label for="pollTable">poll choices list</label>
+                                            <table id="pollTable" class="table table-bordered">
+                                                    <thead>
+                                                      <tr>
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">Choice</th>
+                                                      </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                      <tr>
+                                                        <th scope="row">1</th>
+                                                        <td><input class="w-100" placeholder="Enter choice" type="text" name="choices[]" required></td>
+                                                      </tr>
+                                                      
+                                                      <tr>
+                                                            <th scope="row">2</th>
+                                                            <td><input class="w-100" type="text" placeholder="Enter choice" name="choices[]" required></td>
+                                                          </tr>
+                                                        </tbody>
+                                            </table>
+                
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="lib/js/jquery-3.3.1.js"></script>
+    <script src="lib/js/bootstrap.js"></script>
+    <script src="lib/js/custom.js"></script>
+</body>
+</html>
